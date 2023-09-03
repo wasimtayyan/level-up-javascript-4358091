@@ -24,10 +24,25 @@ class Book {
   sell(numCopiesSold = 1) {
     this.numCopies -= numCopiesSold;
   }
-  
+
   restock(numCopiesStocked = 5) {
     this.numCopies += numCopiesStocked;
   }
 }
 
 // Write your code here
+
+class Book_Edition extends Book {
+  constructor(title, author, ISBN, numCopies, edition) {
+    super(title, author, ISBN, numCopies)
+    this.edition = edition
+
+  }
+  get Edition() {
+    return `The courent virsion of this book is ${this.edition}`
+  }
+
+}
+const artOftime = new Book_Edition('art of time', 'Yara', 454882, 14, 'first edition')
+console.log(artOftime.Edition)
+console.log(artOftime.title)
